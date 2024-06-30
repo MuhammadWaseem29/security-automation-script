@@ -1,0 +1,1 @@
+nmap -sV -A -p- --script vuln <target_ip> && nikto -h <target_url> -Tuning 9 -maxtime 2h && wpscan --url <target_url> --enumerate ap,at,tt,cb,dbe,u,m --random-user-agent && sqlmap -u <target_url> --dbs --risk=3 --level=5 --tamper=space2comment,charencode --batch --random-agent --threads=10 && dirb <target_url> -X .php,.asp,.aspx,.jsp,.html,.js
